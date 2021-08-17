@@ -1,3 +1,4 @@
+
 export const Elements = [
     {
         title: 'Home',
@@ -6,7 +7,7 @@ export const Elements = [
     },
     {
         title: 'Movies',
-        url: '#',
+        url: 'src\components\Movies.js',
         cName: 'nav-links'
     },
     {
