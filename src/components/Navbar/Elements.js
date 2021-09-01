@@ -7,7 +7,7 @@ export const Elements = [
     },
     {
         title: 'Movies',
-        url: 'src\components\Movies.js',
+        url: 'src\\components\\Movies.js',
         cName: 'nav-links'
     },
     {
