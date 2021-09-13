@@ -14,7 +14,7 @@ function Cards(){
       <p className="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       
       <div class="d-grid gap-2 col-4 mx-auto">
-      <button type="button">Book</button>
+      <button type="button" className="btn btn-primary">Book</button>
       </div>
       </div>
   </div>
@@ -30,7 +30,7 @@ function Cards(){
     <div class="card-body">
       <p className="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <div class="d-grid gap-2 col-4 mx-auto">
-      <button type="button">Book</button>
+      <button type="button" className="btn btn-primary">Book</button>
       </div>
     </div>
   </div>
