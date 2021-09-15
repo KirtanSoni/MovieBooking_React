@@ -6,6 +6,8 @@ import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import Movies from './components/Movies';
 import { Fragment } from 'react/cjs/react.production.min';
+
+
 class App extends Component {
   render(){
     return (
