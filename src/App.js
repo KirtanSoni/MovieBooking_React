@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import Movies from './components/Movies';
+import Movies from './components/Movies/Movies';
 import { Fragment } from 'react/cjs/react.production.min';
 import Demo from './components/demo';
 import Login from './components/Forms/login';
@@ -15,10 +15,11 @@ class App extends Component {
       // <Login />
       <Fragment>
       <Navbar/>
-      {/* <Demo /> */}
+      <Demo />
       <Movies/>
         <BrowserRouter>
             <switch>
+            <Route exact path="/navbar" component={Navbar} />
               <Route exact path="/Movies" component={Movies} />
             </switch>
         </BrowserRouter>

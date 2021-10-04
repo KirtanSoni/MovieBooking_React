@@ -29,8 +29,8 @@ class Movies extends Component{
                    <div className="col-md-4">
                    <Cards title="movie 3" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
                    </div>
-               </div>
-           </div>
+                   </div>
+                   </div>
       
     );
 }

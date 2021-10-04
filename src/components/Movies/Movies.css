@@ -6,6 +6,13 @@
 .Cards:hover{
     box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
 }
-.col-md{
-    padding: 1% 1% 1% 1%;
+/* .col-md{
+    padding: 30% 30% 30% 30%;
+    margin-top: 0 !important;
+} */
+.Cards{
+    padding: 3% 3% 3% 3%;
+    justify-content: space-between;
 }
+
+
