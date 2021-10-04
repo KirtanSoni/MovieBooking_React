@@ -6,21 +6,23 @@ import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import Movies from './components/Movies';
 import { Fragment } from 'react/cjs/react.production.min';
-
+import Demo from './components/demo';
+import Login from './components/Forms/login';
 
 class App extends Component {
   render(){
     return (
-      <Fragment>
-      <Navbar/>
-      <Movies/>
-        <BrowserRouter>
-            <switch>
-              <Route exact path="/navbar" component={Navbar} />
-              <Route exact path="/Movies" component={Movies} />
-            </switch>
-        </BrowserRouter>
-      </Fragment>
+      <Login />
+      // <Fragment>
+      // <Navbar/>
+      // <Demo />
+      // <Movies/>
+      //   <BrowserRouter>
+      //       <switch>
+      //         <Route exact path="/Movies" component={Movies} />
+      //       </switch>
+      //   </BrowserRouter>
+      // </Fragment>
     );
   }
 }
