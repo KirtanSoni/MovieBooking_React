@@ -9,12 +9,14 @@ import { Fragment } from 'react/cjs/react.production.min';
 import Demo from './components/demo';
 import Login from './components/Forms/login';
 
+
 class App extends Component {
   render(){
     return (
-      // <Login />
-      <Fragment>
+      <Login />
+      /*<Fragment>
       <Navbar/>
+      
       <Demo />
       <Movies/>
         <BrowserRouter>
@@ -23,7 +25,7 @@ class App extends Component {
               <Route exact path="/Movies" component={Movies} />
             </switch>
         </BrowserRouter>
-      </Fragment>
+      </Fragment>*/
     );
   }
 }

@@ -31,7 +31,7 @@ const Login = () => {
     const loginsubmit = (event) => {
         event.preventDefault();
         console.log(userLogin);
-        axios.post("",userLogin).then((res)=>{
+        axios.post("/login",userLogin).then((res)=>{
         }).catch((err)=>{
             
         })
@@ -42,7 +42,7 @@ const Login = () => {
         const error1 = Validate_signup(userSignup);
         console.log(error1);
         setError(error1);
-        axios.post("",userSignup).then((res)=>{
+        axios.post("/register",userSignup).then((res)=>{
 
         }).catch((err)=>{
             
@@ -86,20 +86,20 @@ const Login = () => {
                                         <h4 class="mb-4 pb-3">Sign Up</h4>
                                         <form method="POST">
                                             <div class="form-group">
-                                                <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" onChange={userSignupData("logname")} required></input>
+                                                <input type="text" name="username" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" onChange={userSignupData("logname")} required></input>
                                                 <i class="input-icon uil uil-user"></i>
                                             </div>	
                                             <div class="form-group mt-2">
-                                                <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onChange={userSignupData("logemail")}></input>
+                                                <input type="email" name="email" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onChange={userSignupData("logemail")}></input>
                                                 {error && error.email_error}
                                                 <i class="input-icon uil uil-at"></i>
                                             </div>	
                                             <div class="form-group mt-2">
-                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" onChange={userSignupData("logpass")}></input>
+                                                <input type="password" name="password" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" onChange={userSignupData("logpass")}></input>
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
                                             <div class="form-group mt-2">
-                                                <input type="password" name="confpass" class="form-style" placeholder="Confirm Password" id="confpass" autocomplete="off" onChange={userSignupData("confpass")}></input>
+                                                <input type="password" name="confirmpassword" class="form-style" placeholder="Confirm Password" id="confpass" autocomplete="off" onChange={userSignupData("confpass")}></input>
                                                 {error && error.password_error}
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
