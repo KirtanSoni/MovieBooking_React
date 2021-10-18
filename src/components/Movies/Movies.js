@@ -12,22 +12,22 @@ class Movies extends Component{
            <div className="container-fluid d-flex justify-content-center">
                <div className="row">
                    <div className="col-md-4">
-                       <Cards title="movie 1" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
+                       <Cards title="movie 1" id="1" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
                    </div>
                    <div className="col-md-4">
-                   <Cards title="movie 3" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
+                   <Cards title="movie 2" id="2" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
                    </div>
                    <div className="col-md-4">
-                   <Cards title="movie 3" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
+                   <Cards title="movie 3" id="3" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
                    </div>
                    <div className="col-md-4">
-                   <Cards title="movie 3" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
+                   <Cards title="movie 4" id="4" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
                    </div>
                    <div className="col-md-4">
-                   <Cards title="movie 3" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
+                   <Cards title="movie 5" id="5" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
                    </div>
                    <div className="col-md-4">
-                   <Cards title="movie 3" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
+                   <Cards title="movie 6" id="6" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/>
                    </div>
                    </div>
                    </div>

@@ -1,0 +1,35 @@
+body{
+    background:radial-gradient();
+    padding: 1% 1% 1% 1%;
+}
+
+.Cards{
+    width:20rem;
+ 
+}
+
+.Cards:hover{
+box-shadow:5px 10px 20px 1px  rgba(0, 0,0,0.253) !important;
+}
+
+.card-body{
+    padding: 1% 1% 1% 1%;
+    font-color:white;
+}
+
+.container-fluid.row{
+    padding: top 4px;
+    padding: right 4px;
+    padding: bottom 4px;
+    padding: left 4px;
+   
+}
+.card{
+    padding: 2% 1% 1% 1%;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.overflow{
+    padding: 1% 1% 1% 1%;
+}
