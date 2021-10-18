@@ -19,6 +19,7 @@ const Login = () => {
     (...prop) =>
     (event) => {
         setUserSignup({ ...userSignup, [prop]: event.target.value });
+        setError({});
         console.log(userSignup);
     }
     const userData =
@@ -26,27 +27,37 @@ const Login = () => {
     (event) => {
       setUserLogin({ ...userLogin, [prop]: event.target.value });
       console.log(userLogin);
-      console.log("error");
     };
     const loginsubmit = (event) => {
         event.preventDefault();
         console.log(userLogin);
-        axios.post("/login",userLogin).then((res)=>{
+        axios.post("http://localhost:3080/user/login",userLogin).then((res)=>{
+            const success={password_error:"login successful!"};
+            setError(success);
         }).catch((err)=>{
-            
+            const error3={password_error:"please check your email and password"};
+            setError(error3);
         })
     }
     const signupsubmit = (event) => {
         event.preventDefault();
         console.log(userSignup);
         const error1 = Validate_signup(userSignup);
-        console.log(error1);
         setError(error1);
-        axios.post("/register",userSignup).then((res)=>{
-
-        }).catch((err)=>{
-            
-        })
+        console.log(error1);
+        if(!error1.valid_email || !error1.valid_password){
+            console.log("validation error.");
+        }
+        else{
+            axios.post("http://localhost:3080/user/register",userSignup).then((res)=>{
+                console.log(res);
+                const message={password_error:"User created!"};
+                setError(message);
+            }).catch((err)=>{
+                const error2={password_error:"User already exists"};
+                setError(error2);
+            })
+        }
     }
     return(
         <>   
@@ -72,7 +83,8 @@ const Login = () => {
                                                 <i class="input-icon uil uil-at"></i>
                                             </div>	
                                             <div class="form-group mt-2">
-                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" onChange={userData("userpass")}></input>
+                                                <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" onChange={userData("logpass")}></input>
+                                                {error && error.password_error}
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
                                             <a href="#" class="btn mt-4" type="submit" onClick={loginsubmit}>submit</a>

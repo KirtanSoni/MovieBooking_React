@@ -32,11 +32,10 @@ const Validate_signup = (data) => {
             error.password_error=`password and confirm password must be same`
         }
         else{
-           
-            const valid=/^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*]).{5,15}$/.test(data.logpass)
+            const valid=/^(?=.*[a-z])(?=.*[A-Z]).{6,15}$/.test(data.logpass)
             if(!valid)
             {
-                error.password_error=`password should atleast contain one uppercase letter and symbol and between 5 to 15 range`
+                error.password_error=`password should atleast contain one uppercase letter and between 6 to 15 range`
             }
             else{
                 error.valid_password=true
