@@ -35,6 +35,11 @@ function App() {
             <Route path="/src/components/ContactUs">
               <ContactUs />
             </Route>
+            <Route path="/Book/:id">
+              <MovieDisplay />
+              <Grid/>
+              <button className="btn btn-primary">Proceed</button>
+            </Route>
         </BrowserRouter> 
 
         {/* <BrowserRouter>

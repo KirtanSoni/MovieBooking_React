@@ -1,9 +1,7 @@
-import { render } from '@testing-library/react';
-import React, { Component } from 'react';
+import React from 'react';
 import './Grid.css';
 const { useState } = React;
-class Grid extends Component {
-  render(){
+function Grid() {
     var items=[];
     for(let i=1;i<=80;i++){
         items.push(<Button key={i} label={i}/>);
@@ -15,32 +13,6 @@ class Grid extends Component {
         array.push(temp);
         temp=[];
       }
-    }
-    function Button({label}) {
-
-      const [active, setActive] = useState(false);
-      
-      const handleClick = (e) => {
-        setActive(a => !a);
-      };
-      
-      return (
-        <button 
-          type='button' 
-          className={active ? 'active' : ''} 
-          onClick={handleClick}
-          id={label}
-          style={{
-            width:33,
-            marginTop:5,
-            marginRight:5,
-            marginLeft:5,
-            borderRadius:5
-          }}
-        >
-        {label}
-        </button>
-      )
     }
   return (
     <div className="Grid">
@@ -65,5 +37,32 @@ class Grid extends Component {
     </div>
   )
 }
+
+function Button({label}) {
+
+  const [active, setActive] = useState(false);
+  
+  const handleClick = (e) => {
+    setActive(a => !a);
+  };
+  
+  return (
+    <button 
+      type='button' 
+      className={active ? 'active' : ''} 
+      onClick={handleClick}
+      id={label}
+      style={{
+        width:33,
+        marginTop:4,
+        marginRight:4,
+        marginLeft:4,
+        borderRadius:5
+      }}
+    >
+    {label}
+    </button>
+  )
 }
+
 export default Grid
