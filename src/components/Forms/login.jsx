@@ -10,11 +10,13 @@ const Login = () => {
         logemail: "",
         logpass: "",
     });
+
     const [userSignup, setUserSignup] = useState({
         logname: "",
         logemail: "",
         logpass: "",
     });
+
     const userSignupData=
     (...prop) =>
     (event) => {
@@ -22,12 +24,14 @@ const Login = () => {
         setError({});
         console.log(userSignup);
     }
+
     const userData =
     (...prop) =>
     (event) => {
       setUserLogin({ ...userLogin, [prop]: event.target.value });
       console.log(userLogin);
     };
+
     const loginsubmit = (event) => {
         event.preventDefault();
         console.log(userLogin);
@@ -39,6 +43,7 @@ const Login = () => {
             setError(error3);
         })
     }
+
     const signupsubmit = (event) => {
         event.preventDefault();
         console.log(userSignup);
@@ -59,6 +64,7 @@ const Login = () => {
             })
         }
     }
+    
     return(
         <>   
 	<a href="https://front.codes/" class="logo" target="_blank">

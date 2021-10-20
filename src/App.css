@@ -8,3 +8,48 @@
 {
   margin-left: 40%;
 }
+.AddMovie{
+  background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url('/src/components/Forms/addmoviebg.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 497px;
+        width: 100%;
+        margin: auto;
+        color: white  ;
+        position: relative;
+}
+.AddMovie .container{
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: black;
+  opacity: 0.5;
+  padding: 30px;
+}
+.AddMovie .container form label{
+  width: 200px;
+}
+.AddMovie .container .form-group{
+  padding: 5px;
+}
+.AddMovie .container .form-group .moviefields:focus{
+  outline: none;
+}
+.AddMovie .container .form-group .submitbtn{
+  padding: 6px;
+  border: none;
+  border-radius: 20px;
+  background-color:bisque;
+}
+.navbar{
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+}

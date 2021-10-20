@@ -12,6 +12,7 @@ import MovieDisplay from './components/Movie Display/MovieDisplay';
 import ContactUs from './components/ContactUs';
 import Home from './components/Home';
 import Plays from './components/Plays';
+import AddMovie from './components/Forms/AddMovie';
 
 //to change navbar routes update "path" of the Route tag below with the absolute path of component you want to render
 //and paste the same path in navbar.jsx in the link tab
@@ -30,6 +31,10 @@ function App() {
             
             <Route path="/src/components/Plays">
               <Plays />
+            </Route>
+
+            <Route path="/src/components/Forms/AddMovie.jsx">
+              <AddMovie />
             </Route>
             
             <Route path="/src/components/ContactUs">
