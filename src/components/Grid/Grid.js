@@ -14,7 +14,14 @@ function Grid() {
         temp=[];
       }
     }
+    function selectedseats(){
+      var arr=document.querySelectorAll(".active");
+      arr.forEach(function (x){
+        alert(x.id);
+      })
+    }
   return (
+    <div>
     <div className="Grid">
         <table>
         <tbody>
@@ -35,6 +42,8 @@ function Grid() {
         </tbody>
       </table>
     </div>
+    <button className="btn btn-primary" onClick={selectedseats}>List of Seats</button>
+    </div>
   )
 }
 
@@ -45,7 +54,12 @@ function Button({label}) {
   const handleClick = (e) => {
     setActive(a => !a);
   };
-  
+  var booked=[5,10,16];
+  function checkID(id){
+    if(booked.includes(id))
+      return true;
+    return false;
+  }
   return (
     <button 
       type='button' 
@@ -59,10 +73,10 @@ function Button({label}) {
         marginLeft:4,
         borderRadius:5
       }}
+      disabled={checkID(label)?true:false}
     >
     {label}
     </button>
   )
 }
-
 export default Grid
