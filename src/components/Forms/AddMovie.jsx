@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 
 function AddMovie(){
+    const [error, setError] = useState({
+    });
     const [movieobj, setMovieobj] = useState({
         movieName: "",
         theatreName: "",
@@ -22,7 +25,13 @@ function AddMovie(){
     const movieSubmit = (event) => {
         event.preventDefault();
         console.log(movieobj);
-        //use axios post here
+        axios.post("http://localhost:3080/movie/add",movieobj).then((res)=>{
+            const success={password_error:"added successful!"};
+            setError(success);
+        }).catch((err)=>{
+            const error3={password_error:"failed to add movie"};
+            setError(error3);
+        })
         
     }
 
@@ -46,6 +55,7 @@ function AddMovie(){
             </div>
             <div class="form-group mt-2">
                 <label>Select Movie Poster :</label> <input type="file"  name="Poster" class="moviefields" onchange={movieData("Poster")}></input>
+                {error && error.password_error}
             </div>
             <div class="form-group mt-2">
                 <center><button className="submitbtn" onClick={movieSubmit}>Add Movie</button></center>

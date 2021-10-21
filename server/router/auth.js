@@ -12,7 +12,6 @@ router.post('/register',(req,res)=>{
     const username=req.body.logname;
     const password=req.body.logpass;
     const email=req.body.logemail;
-  
     if (!(email && password && username)) {
       res.status(400).send("All input is required");
     }

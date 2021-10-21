@@ -9,9 +9,12 @@ const PORT=3080;
 
 require('./DB/conn');
 const routesUrl=require('./router/auth')
+const routesUrl1= require('./router/movieRoute')
 app.use(express.json())
 app.use(cors())
+
 app.use('/user',routesUrl);
+app.use('/movie',routesUrl1);
 
 app.get('/',(req,res)=>{
     res.send('Hello world!!');
