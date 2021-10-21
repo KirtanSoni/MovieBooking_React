@@ -43,7 +43,7 @@ function App() {
             <Route path="/Book/:id">
               <MovieDisplay />
               <Grid/>
-              <button className="btn btn-primary">Proceed</button>
+              {/* <Link to={'/Book/:id'}><button className="btn btn-primary">Proceed</button></Link> */}
             </Route>
         </BrowserRouter> 
 
