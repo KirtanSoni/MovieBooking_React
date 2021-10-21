@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/user',routesUrl);
-app.use('/movie',routesUrl1);
+app.use('/movies',routesUrl1);
 
 app.get('/',(req,res)=>{
     res.send('Hello world!!');

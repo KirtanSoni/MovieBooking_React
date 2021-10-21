@@ -17,14 +17,14 @@ const movieSchema=new mongoose.Schema({
     },
     location: {
         type:String,
-        required:true,
+        
     },
     description: {
         type: String,
     },
     time:{
-        type: Date, 
-        required:true,
+        type: String,
+        //required:true,
     },
     seats:{
         type:[mongoose.SchemaTypes.ObjectId],

@@ -8,10 +8,9 @@ function AddMovie(){
     const [movieobj, setMovieobj] = useState({
         movieName: "",
         theatreName: "",
-        Description: "",
-        Time: "",
-        Seats: "",
-        Poster: "",
+        description: "",
+        time: "",
+       // Poster: "",
     });
 
     const movieData =
@@ -25,7 +24,7 @@ function AddMovie(){
     const movieSubmit = (event) => {
         event.preventDefault();
         console.log(movieobj);
-        axios.post("http://localhost:3080/movie/add",movieobj).then((res)=>{
+        axios.post("http://localhost:3080/movies/add",movieobj).then((res)=>{
             const success={password_error:"added successful!"};
             setError(success);
         }).catch((err)=>{
@@ -45,18 +44,17 @@ function AddMovie(){
                 <label>Name of Theatre :</label> <input type="text" name="theatreName" className="moviefields" onChange={movieData("theatreName")}></input>
             </div>
             <div class="form-group mt-2">
-                <label>Brief Description of movie :</label> <input type="text" name="Description" className="moviefields" onChange={movieData("Description")}></input>
+                <label>Brief Description of movie :</label> <input type="text" name="description" className="moviefields" onChange={movieData("description")}></input>
             </div>
             <div class="form-group mt-2">
-                <label>Show Time :</label> <input type="time" name="Time" className="moviefields" onchange={movieData("Description")}></input>
-            </div>
-            <div class="form-group mt-2">
-                <label>Toatal Seats :</label> <input type="number" min="1" name="Time" className="moviefields" onchange={movieData("Seats")}></input>
-            </div>
-            <div class="form-group mt-2">
+                <label>Show Time :</label> <input type="text" name="time" className="moviefields" onChange={movieData("time")}></input>
+                {error && error.password_error}       
+                </div>
+            
+            {/* < div class="form-group mt-2">
                 <label>Select Movie Poster :</label> <input type="file"  name="Poster" class="moviefields" onchange={movieData("Poster")}></input>
-                {error && error.password_error}
-            </div>
+                
+            </div> */}
             <div class="form-group mt-2">
                 <center><button className="submitbtn" onClick={movieSubmit}>Add Movie</button></center>
             </div>
