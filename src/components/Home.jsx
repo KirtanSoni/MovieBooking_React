@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import './Home.css'
 const Home = () => {
@@ -11,6 +12,13 @@ const Home = () => {
         <h1>Highway Road Near Dmart</h1>
         <h1>Nadiad,Gujarat</h1>
       </div>
+=======
+import React from "react";
+
+function Home(){
+    return <div className="container">
+       
+>>>>>>> 6bd5d6059bf07d4185e5d79e6d87d9030ebea60e
     </div>
     )
 }

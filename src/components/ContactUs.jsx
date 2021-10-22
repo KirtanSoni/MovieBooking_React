@@ -20,7 +20,7 @@ function ContactUs(){
                         </div>
                         </div>
                     </div>   
-                    <div className="contact_info_item d-flex justify-content-start align-items-center">
+                    <div className="contact_info_name d-flex justify-content-start align-items-center">
                         <img src={mail} height="50" alt="Email" />
                         <div className="contact_info_content">
                         <div className="contact_info_title">
@@ -32,7 +32,7 @@ function ContactUs(){
                         </div>
                     </div>  
 
-                    <div className="contact_info_item d-flex justify-content-start align-items-center">
+                    <div className="contact_info_add d-flex justify-content-start align-items-center">
                         <img src={add} height="50"  alt="Address" />
                         <div className="contact_info_content">
                         <div className="contact_info_title">
@@ -62,17 +62,17 @@ function ContactUs(){
 
                                 </input>
 
-                                <input type="email" id="contact_form_name" className="contact_form_name input_field" placeholder="Your Email" required="true">
+                                <input type="email" id="contact_form_email" className="contact_form_name input_field" placeholder="Your Email" required="true">
 
                                 </input>
 
-                                <input type="number" id="contact_form_name" className="contact_form_name input_field" placeholder="Your Phone Number" required="true">
+                                <input type="number" id="contact_form_num" className="contact_form_name input_field" placeholder="Your Phone Number" required="true">
 
                                 </input>
                             </div>
 
                             <div className="contact_form_text mt-5">
-                                <textarea className="text_field contact_form_message" placeholder="Enter Your Statement" 
+                                <textarea className="text_field_contact_form_message" placeholder="Enter Your Statement" 
                                 cols="116" rows="5"></textarea>
                             </div>
 
