@@ -22,6 +22,26 @@
         color: white  ;
         position: relative;
 }
+.ContactUs{
+  background:
+    url('/src/components/Forms/conbg.jpg');
+    opacity:.8;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 497px;
+  width: 100%;
+  color:aliceblue;
+}
+
+.ContactUs .contact_form_name{
+  opacity:.7;
+}
+.ContactUs .contact_form_text{
+  opacity:.7;
+}
+.ContactUs .phn{
+ background-image: url('./components/Forms/phn.png');
+}
 .AddMovie .container{
   width: 60%;
   position: absolute;
