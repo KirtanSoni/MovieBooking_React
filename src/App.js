@@ -13,6 +13,7 @@ import ContactUs from './components/ContactUs';
 import Home from './components/Home';
 import Plays from './components/Plays';
 import AddMovie from './components/Forms/AddMovie';
+import TwoComponent from './components/newcomponent/TwoComponent';
 
 //to change navbar routes update "path" of the Route tag below with the absolute path of component you want to render
 //and paste the same path in navbar.jsx in the link tab
@@ -41,8 +42,7 @@ function App() {
               <ContactUs />
             </Route>
             <Route path="/Book/:id">
-              <MovieDisplay />
-              <Grid/>
+              <TwoComponent/>
               {/* <Link to={'/Book/:id'}><button className="btn btn-primary">Proceed</button></Link> */}
             </Route>
         </BrowserRouter> 
