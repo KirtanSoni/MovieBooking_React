@@ -5,10 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route } from 'react-router';
 import { BrowserRouter,Switch,withRouter,Link } from 'react-router-dom';
 import Movies from './components/Movies/Movies';
-import { Fragment } from 'react/cjs/react.production.min';
 import Login from './components/Forms/login';
-import Grid from './components/Grid/Grid'
-import MovieDisplay from './components/Movie Display/MovieDisplay';
 import ContactUs from './components/ContactUs';
 import Home from './components/Home';
 import Plays from './components/Plays';
@@ -25,7 +22,9 @@ function App() {
             <Route path="/src/components/Forms/login.jsx" exact>
               <Login />
             </Route>
-              
+            <Route path="/AboutUs" exact>
+              <Home />
+            </Route>
             <Route path="/src/components/Movies/Movies.js">
               <Movies />
             </Route>

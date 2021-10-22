@@ -1,8 +1,18 @@
-import React from "react";
-
-function Home(){
-    return <div className="container">
-        <h6>design Home page in /components/Home.jsx add something like city selection to view available plays and movies in your city</h6>
+import React from 'react'
+import './Home.css'
+const Home = () => {
+    return (
+        <div class="parent">
+      <img src="https://etimg.etb2bimg.com/photo/78545917.cms" alt="Books" />
+      <div class="text-block">
+        <h1>Contact Details:</h1>
+        <h1>Theater Name:Ajanta Multiplex</h1>
+        <h1>Theater Address:</h1>
+        <h1>Highway Road Near Dmart</h1>
+        <h1>Nadiad,Gujarat</h1>
+      </div>
     </div>
+    )
 }
-export default Home;
+
+export default Home

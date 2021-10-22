@@ -1,0 +1,21 @@
+.parent {
+    position: relative;
+  }
+  .text-block {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    background-color: #000;
+    opacity: .8;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left:30%;
+    margin-bottom: 19%;
+  }
+  .parent img {
+    width: 1470px;
+    height: 700px;
+    padding-left: -90px;
+    padding-right: -90px;
+  }
