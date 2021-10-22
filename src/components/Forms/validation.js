@@ -7,9 +7,8 @@ const Validate_signup = (data) => {
         valid_password:false
     }
     if(!data.logemail)
-    {
-       
-        error.email_error=`Email feild can't be empty`
+    { 
+        error.email_error=`Email field can't be empty`
     }
     else
     {

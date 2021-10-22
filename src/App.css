@@ -1,3 +1,15 @@
+.logincolor{
+  color: grey;
+}
+.loginbutton{
+  padding: 6px;
+  border: none;
+  border-radius: 20px;
+  background-color:blanchedalmond;
+}
+.errormessage{
+  color: blanchedalmond;
+}
 *{
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +28,7 @@
           url('/src/components/Forms/addmoviebg.jpg');
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        height: 497px;
+        height: 582px;
         width: 100%;
         margin: auto;
         color: white  ;
@@ -51,10 +63,10 @@
 .ContactUs{
   background:
     url('/src/components/Forms/conbg.jpg');
-    opacity:.8;
+    opacity:.9;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 497px;
+  height: 582px;
   width: 100%;
   color:aliceblue;
   position: relative;
@@ -68,7 +80,7 @@
   display: inline-flex;
 }
 .ContactUs .contact_form_text{
-  opacity:.7;
+  opacity:.6;
   position: relative;
   display: inline-flex;
 }

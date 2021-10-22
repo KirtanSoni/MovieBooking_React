@@ -20,4 +20,4 @@ const MovieDisplay = () => {
     )
 }
 
-export default MovieDisplay
+export default MovieDisplay;

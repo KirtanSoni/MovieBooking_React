@@ -84,7 +84,7 @@ const Login = () => {
                             <div class="card-front">
                                 <div class="center-wrap">
                                     <div class="section text-center">
-                                        <h4 class="mb-4 pb-3">Log In</h4>
+                                        <h4 class="logincolor">Log In</h4>
                                         <form method="POST">
                                             <div class="form-group">
                                                 <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onChange={userData("logemail")}></input>
@@ -92,10 +92,12 @@ const Login = () => {
                                             </div>	
                                             <div class="form-group mt-2">
                                                 <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" onChange={userData("logpass")}></input>
-                                                {error && error.password_error}
+                                                <div class="errormessage">
+                                                    {error && error.password_error}
+                                                </div>
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
-                                            <a href="#" class="btn mt-4" type="submit" onClick={loginsubmit}>submit</a>
+                                            <center><button class="loginbutton" onClick={loginsubmit}>Log In</button></center>
                                         </form>
                                       </div>
                                   </div>
@@ -103,7 +105,7 @@ const Login = () => {
                             <div class="card-back">
                                 <div class="center-wrap">
                                     <div class="section text-center">
-                                        <h4 class="mb-4 pb-3">Sign Up</h4>
+                                        <h4 class="logincolor">Sign Up</h4>
                                         <form method="POST">
                                             <div class="form-group">
                                                 <input type="text" name="username" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" onChange={userSignupData("logname")} required></input>
@@ -111,7 +113,9 @@ const Login = () => {
                                             </div>	
                                             <div class="form-group mt-2">
                                                 <input type="email" name="email" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off" onChange={userSignupData("logemail")}></input>
-                                                {error && error.email_error}
+                                                <div class="errormessage">
+                                                    {error && error.email_error}
+                                                </div>
                                                 <i class="input-icon uil uil-at"></i>
                                             </div>	
                                             <div class="form-group mt-2">
@@ -120,10 +124,12 @@ const Login = () => {
                                             </div>
                                             <div class="form-group mt-2">
                                                 <input type="password" name="confirmpassword" class="form-style" placeholder="Confirm Password" id="confpass" autocomplete="off" onChange={userSignupData("confpass")}></input>
-                                                {error && error.password_error}
+                                                <div class="errormessage">
+                                                    {error && error.password_error}
+                                                </div>
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
-                                            <a href="#" class="btn mt-4" type="submit" onClick={signupsubmit}>submit</a>
+                                            <center><button class="loginbutton" onClick={signupsubmit}>Sign Up</button></center>
                                         </form>
                                       </div>
                                   </div>

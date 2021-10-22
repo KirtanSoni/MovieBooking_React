@@ -7,7 +7,7 @@ const CardNoButton=(props)=>{
       <div className="body">
       <div className="card text-center shadow">
       <div className='overflow'>
-      <img src={props.props.imgsrc} className="img-fluid img-thumbnail" alt=""/>
+        All eyes this way please!
       </div>
       <div className="card-body text-dark-white">
         <h2 className='card-title'>{props.props.title}</h2>
