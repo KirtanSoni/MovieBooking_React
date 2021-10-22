@@ -21,8 +21,8 @@ function App() {
       <>
         <BrowserRouter>
           <Navbar /> 
-            <Route path="/" exact>
-              <Home />
+            <Route path="/src/components/Forms/login.jsx" exact>
+              <Login />
             </Route>
               
             <Route path="/src/components/Movies/Movies.js">

@@ -38,16 +38,14 @@ router.post('/addseat',(req, res)=>{
         seat.findByIdAndUpdate({_id:req.body.Movie_id},{$push:{seats: seat}}, function(err, result){
 
             if(err){
-                res.send(err)
+                if (err) res.status(400).json(err.message);
+                else res.json(result);
             }
             else{
                 res.send(result)
             }
     
         })
-        if (err) res.status(400).json(err.message);
-        else res.json(result);
-    }
     })).catch((error1)=>{
         res.status(201).json({
             message:'authentication error'

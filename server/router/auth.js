@@ -3,6 +3,7 @@ const express = require('express')
 const router=express.Router();
 const userSchemacopy=require('../models/userSchema');
 const bcrypt=require('bcrypt')
+const jwt = require('jsonwebtoken');
 
 router.get('/',(req,res)=>{
     res.send('Hello world Router.js!!')
@@ -67,12 +68,37 @@ router.post('/login',async (req, res) => {
         if (!isMatch)
             return res.status(500).json({ msg: "Password is Wrong." });
         else
-            return res.json({msg:"login success"});
+        {
+            const token = jwt.sign(
+                { user_id: userawail._id, username: userawail.username },
+                "Moviebooking",
+                {
+                  expiresIn: "2h",
+                }
+              );
+              res.set("token", token);
+            return res.json({msg:"login success",token});
+        }
     } 
     catch (err) {
         return res.status(500).json({msg:"user error"});
     }
 })
-
+//token must be user object sent from front end to this function
+router.post('/authenticate',async (req, res) => {
+    console.log(req.body)
+    const token = req.body.user
+  if (!token) {
+    return res.status(403).send( {message:"A token is required for authentication"});
+  }
+  try {
+    const decoded = jwt.verify(token, "Moviebooking");
+    req.user = decoded;
+    console.log(req.user)
+    res.status(200).json(req.user)
+  } catch (err) {
+    return res.status(401).send("Invalid Token");
+  }
+})
 
 module.exports=router;

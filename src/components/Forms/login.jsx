@@ -36,6 +36,8 @@ const Login = () => {
         event.preventDefault();
         console.log(userLogin);
         axios.post("http://localhost:3080/user/login",userLogin).then((res)=>{
+            //console.log(res.data.token);
+            localStorage.setItem("user",res.data.token);
             const success={password_error:"login successful!"};
             setError(success);
         }).catch((err)=>{
