@@ -1,8 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { Redirect } from 'react-router-dom';
+import { useAuth } from '../Auth';
+import { useSelector } from 'react-redux';
 
 function AddMovie(){
+    const check=useAuth();
+    const user = useSelector((state) => state.user);
+    console.log(check);
+    console.log(user);
     const [error, setError] = useState({
     });
     const [movieobj, setMovieobj] = useState({
@@ -34,7 +41,9 @@ function AddMovie(){
         
     }
 
-    return <div className="AddMovie">
+    return(<div>
+            {Object.keys(user).length !=0?<div>
+                <div className="AddMovie">
     <div className="container">
         <form method="POST">
             <div class="form-group">
@@ -61,5 +70,10 @@ function AddMovie(){
         </form>
     </div>
     </div>
+            </div>:<Redirect to={{
+                pathname: "/src/components/Forms/login.jsx",
+            }}>
+           </Redirect>}
+        </div>);
 }
 export default AddMovie;
