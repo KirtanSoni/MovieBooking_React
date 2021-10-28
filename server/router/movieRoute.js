@@ -1,9 +1,21 @@
+const { response } = require('express');
 
 //import {addMovie} from "../controllers/movieController";
 const express = require('express');
 const movieSchemacopy=require('../models/movieSchema');
 const seatSchemacopy=require('../models/seatSchema');
 const router = express.Router();
+
+
+
+router.post('/Movies',async (req,res)=>{
+        try{const movie = await movieSchemacopy.find();
+        res.json({movie});}
+        catch (err) {
+            return res.status(500).json({ msg: err.message });
+        }     
+    
+});
 
 //router.route('/:id').get(isSlotAvailable);
 // exports.DataUpload = (req, res) => {

@@ -5,20 +5,29 @@ import './Movies.css';
 import { Redirect } from 'react-router-dom';
 import { useAuth } from '../Auth';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
+import { useState } from "react";
 
 
 const Movies = () =>{
     const check=useAuth();
     const user = useSelector((state) => state.user);
-    let items=['Item 1','Item 2','Item 3','Item 4','Item 5'];
+let items=['1','2'];
+    const movie=[];
+
+    axios.post("http://localhost:3080/movies/Movies",movie).then((res)=>{    
+    console.log(movie);
+
+        
+    });
     console.log(check);
     console.log(user);
     return (<div>
         {Object.keys(user).length !=0?<div>
             <div className="container-fluid d-flex justify-content-center">
             <div className="row">
-            {items.map((item,index)=>{
-                return <div key={index} className="col-md-4"><Cards title={item} id="1" imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content="Some quick example text to build on the card title and make up the bulk of the card's content"/></div>
+            {movie.map((i)=>{
+                return <div className="col-md-4"><Cards title={i.movieName} id={i._id} imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content={i.description}/></div>
             })}
         </div>
     </div>
