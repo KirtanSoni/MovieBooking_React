@@ -87,3 +87,8 @@
     background-size: cover;
     height: calc(100vh - 80px);
   }
+  #logout{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+  }

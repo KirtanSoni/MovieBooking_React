@@ -5,30 +5,15 @@ const mongoose = require('mongoose');
 const movieSchema=new mongoose.Schema({
     movieName: {
         type: String,
-        required: true,
-        trim: true
-        
     },
     theatreName: {
-        type: String,
-        required: true,
-        trim: true,
-        
-    },
-    location: {
-        type:String,
-        
+        type: String, 
     },
     description: {
         type: String,
     },
     time:{
         type: String,
-        //required:true,
-    },
-    seats:{
-        type:[mongoose.SchemaTypes.ObjectId],
-        ref: 'seat',
     }
 })
 

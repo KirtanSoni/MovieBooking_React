@@ -3,29 +3,53 @@
 const express = require('express');
 const movieSchemacopy=require('../models/movieSchema');
 const seatSchemacopy=require('../models/seatSchema');
-const addMovie=require('../controllers/movieController');
 const router = express.Router();
 
 //router.route('/:id').get(isSlotAvailable);
-router.post('/add',(req, res)=>{
-   // addMovie
-    const name=req.body.movieName;
-    const theatre=req.body.theatreName;
-    
-    
-    const desc=req.body.description;
+// exports.DataUpload = (req, res) => {
+//     console.log(req.body)
+//       // console.log(req.body)
+//     const data = req.body;
+//     const dataAdd = new movieSchemacopy(data);
+//     const status = dataAdd.save(function (err) {
+//     if (err) {
+//         return console.error(err);
+//     }
+//     });
+//     res.json(status);
+//   };
+router.post('/add',(req, res) => {
+    console.log(req.body)
+    const movieName=req.body.movieName;
+    const theatreName=req.body.theatreName;
+    const description=req.body.description;
     const time=req.body.time;
-   const movie = new movieSchemacopy({name,theatre,desc,time})
-   const status=movie.save().then((movie=> {
-     console.log("mail object=> ");
-   })).catch((error1)=>{
-       res.status(201).json({
-           message:'authentication error'
-       });
-   })
-   res.status(201).json(status);
+    const movie = new movieSchemacopy({movieName,theatreName,description,time})
+    const status=movie.save().then((user=> {
+        console.log("mail object=> ");
+      })).catch((error1)=>{
+          res.status(201).json({
+              message:'authentication error'
+          });
+      })
+      res.status(201).json(status);
+      // console.log(req.body)
+    // const movieName=req.body.movieName;
+    // const theatreName=req.body.theatreName;
+    // const description=req.body.description;
+    // const time=req.body.time;
+    // console.log(req.body,"movie");
+    // try{
+    //     const movieObj=new movieSchemacopy({movieName,theatreName,description,time});
+    //     movieObj.save().then((data)=>{
+    //     console.log(data);
+    //     res.json({data});
+    // })
+    // }
+    // catch{
+    //     res.status(500).json({message : "error"})
+    // }
 });
-
 
 router.post('/addseat',(req, res)=>{
     // addseat

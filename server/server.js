@@ -1,9 +1,9 @@
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const express = require('express')
-const app = express()
-const cors=require('cors')
+const express = require('express');
+const app = express();
+const cors=require('cors');
 
 const PORT=3080;
 
@@ -20,35 +20,6 @@ const storeItems= new Map([
     [2,{priceInRupees:200, name:'Gold'}],
 ])
 
-app.post('/create-book-session', async (req,res)=>{
-    try{
-        const session=await stripe.book.sessions.create({
-            payment_method_types:['card'],
-            mode:'payment',
-            line_items:req.body.items.map(item=>{
-                const storeItem=storeItem.get(item.id)
-                return{
-                    price_data:{
-                        currency='usd',
-                        product_data:{
-                            name:storeItem.name
-                        },
-                        unit_amount: storeItem.priceInRupees,
-                    },
-                    quantity:item.quantity
-                }
-            }),
-            success_url:'${process.env.SERVER_URL}/home.jsx',
-            cancel_url:'${process.env.SERVER_URL}/Movies.js'
-        })
-        res.json({url:"Hi"})
-    }
-    catch(e)
-    {
-        res.status(500).json({error: e.message})
-    }
-
-})
 app.use(cors())
 
 app.use('/user',routesUrl);

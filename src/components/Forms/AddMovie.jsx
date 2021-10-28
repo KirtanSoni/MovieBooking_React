@@ -33,12 +33,12 @@ function AddMovie(){
         console.log(movieobj);
         axios.post("http://localhost:3080/movies/add",movieobj).then((res)=>{
             const success={password_error:"added successful!"};
+            console.log("error",res.data);
             setError(success);
         }).catch((err)=>{
             const error3={password_error:"failed to add movie"};
             setError(error3);
-        })
-        
+        })   
     }
 
     return(<div>
@@ -60,10 +60,6 @@ function AddMovie(){
                 {error && error.password_error}       
                 </div>
             
-            {/* < div class="form-group mt-2">
-                <label>Select Movie Poster :</label> <input type="file"  name="Poster" class="moviefields" onchange={movieData("Poster")}></input>
-                
-            </div> */}
             <div class="form-group mt-2">
                 <center><button className="submitbtn" onClick={movieSubmit}>Add Movie</button></center>
             </div>
