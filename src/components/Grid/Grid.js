@@ -1,7 +1,15 @@
 import React from 'react';
 import './Grid.css';
 const { useState } = React;
+
 function Grid() {
+  const [mov, setMov] = useState([]);
+  //axios.get("http://localhost:3080/movies/bookedseat",mov).then((res)=>{    
+  //setMov(res.data.movie);
+  //console.log(mov);
+
+      
+   // });
     var items=[];
     for(let i=1;i<=80;i++){
         items.push(<Button key={i} label={i}/>);

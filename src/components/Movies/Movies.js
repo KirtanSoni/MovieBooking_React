@@ -12,11 +12,12 @@ import { useState } from "react";
 const Movies = () =>{
     const check=useAuth();
     const user = useSelector((state) => state.user);
-let items=['1','2'];
-    const movie=[];
-
-    axios.post("http://localhost:3080/movies/Movies",movie).then((res)=>{    
-    console.log(movie);
+    let items=['1','2'];
+    
+    const [mov, setMov] = useState([]);
+    axios.get("http://localhost:3080/movies/Movies").then((res)=>{    
+    setMov(res.data.movie);
+    console.log(mov);
 
         
     });
@@ -26,7 +27,7 @@ let items=['1','2'];
         {Object.keys(user).length !=0?<div>
             <div className="container-fluid d-flex justify-content-center">
             <div className="row">
-            {movie.map((i)=>{
+            {mov.map((i)=>{
                 return <div className="col-md-4"><Cards title={i.movieName} id={i._id} imgsrc="https://reactjsexample.com/content/images/2020/01/React-MovieCards-1.jpg" class="card-thumbnail" alt="" content={i.description}/></div>
             })}
         </div>

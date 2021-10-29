@@ -8,9 +8,12 @@ const router = express.Router();
 
 
 
-router.post('/Movies',async (req,res)=>{
-        try{const movie = await movieSchemacopy.find();
-        res.json({movie});}
+
+router.get('/Movies',async (req,res)=>{
+        try{
+            const movie = await movieSchemacopy.find();
+            res.send({movie})   
+        }
         catch (err) {
             return res.status(500).json({ msg: err.message });
         }     
@@ -63,6 +66,12 @@ router.post('/add',(req, res) => {
     // }
 });
 
+router.get('/bookedseat',async (req, res)=>{
+    const movID=req.body.movie_ID;
+    const bookedseats =  await seatSchemacopy.find({"Movie":movID}).sort("seat_No");
+    res.json(bookedseats);
+});
+
 router.post('/addseat',(req, res)=>{
     // addseat
      const movID=req.body.movie_ID;
@@ -71,7 +80,7 @@ router.post('/addseat',(req, res)=>{
     const seat = new seatSchemacopy({NUM,movID,userID})
     const status=seat.save().then((seat=> {
         
-        seat.findByIdAndUpdate({_id:req.body.Movie_id},{$push:{seats: seat}}, function(err, result){
+        //seat.findByIdAndUpdate({_id:req.body.Movie_id},{$push:{seats: seat}}, function(err, result){
 
             if(err){
                 if (err) res.status(400).json(err.message);
@@ -81,12 +90,7 @@ router.post('/addseat',(req, res)=>{
                 res.send(result)
             }
     
-        })
-    })).catch((error1)=>{
-        res.status(201).json({
-            message:'authentication error'
-        });
-    })
-    res.status(201).json(status);
+        }),
+    res.status(201).json(status));
  });
 module.exports= router;
