@@ -50,7 +50,7 @@ function Grid() {
         </tbody>
       </table>
     </div>
-    <button className="btn btn-primary" onClick={selectedseats}>List of Seats</button>
+    <button className="btn btn-primary">Attach payment portal here</button>
     </div>
   )
 }
